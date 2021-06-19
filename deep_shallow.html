@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deep_shallow</title>
+</head>
+<body>
+    <script>
+        
+        // 기본 자료형의 경우
+        console.log("===============기본 자료형==================")
+        let a = 'love';
+        let b = a;
+         
+        a = 'hate';
+        console.log(a);
+        console.log(b);
+        
+        // 객체의 경우
+        console.log("===============객체의 경우 (객체의 얕은 복사)=============");
+        let c = {
+            k:1
+        }
+
+        let d = c;
+
+        c.k = 2;
+        console.log(c.k);
+        console.log(d.k);
+        
+        console.log(`"객체는 reference가 복제되는 것이기에 같은 Object를 바라본다."`);
+        // 객체의 깊은 복사
+        console.log("===============객체의 경우 (객체의 깊은 복사 中 Object.assign 방법)=============");
+        let e = {
+            k:1
+        }
+
+        let f = Object.assign({}, e); // 인수 e 앞의 빈 객체가 생성되고 그 안에 k:1 이 들어가는 방식 
+        // f 객체는 새로 생긴 객체이기 때문에 객체 e와 바라보는 위치가 다르다. 그냥 둘은 다른 객체다.
+        
+        console.log(e);
+        console.log(f);
+        console.log(e === f);
+
+        e.k= 2;
+        console.log(e);
+        console.log(f);
+
+        console.log("===============객체의 경우 (객체의 깊은 복사 스프레드 문법의 방법)=============");
+        let g = {
+            k:1
+        };
+        let h = {...g}; // { k:1 } // 스프레드 문법으로 객체를 벗겨낸 후 다시 새로운 객체 리터럴로 감쌌으니 새로운 객체이고 다른 메모리 주소를 참조한다.
+        console.log(g);
+        console.log(h);
+        console.log(g===h);
+        
+        g.k = 2;
+        console.log(g);
+        console.log(h);
+    
+    </script>
+</body>
+</html>

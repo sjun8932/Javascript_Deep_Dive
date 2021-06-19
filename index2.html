@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = {
+            k:1
+        } // 001
+
+        let b = {...a}; // { k:1 } // {...a}를 한 순간부터 내용물이 같아도 b가 새롭게 생긴 객체이므로 a와 b는 다른 객체임
+        console.log(a);
+        console.log(b);
+        console.log(a === b);
+
+        a.k = 2;
+        console.log(a);
+        console.log(b);
+    </script>
+</body>
+</html>
