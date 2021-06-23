@@ -42,3 +42,5 @@ descriptor = Object.getOwnPropertyDescriptor(person, 'fullName');
 console.log(descriptor);
 // {get:f, set: f, enumerable: true, configurable: true}
 
+
+
